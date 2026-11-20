@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Technical field notes from Cortronics — power electronics, ESP32, RF, PCB design and bench measurement." />
+  <title>Field Notes · Cortronics Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Cortronics home">
+        <span class="brand-mark" aria-hidden="true">C/<span class="brand-dot">•</span></span>
+        <span class="brand-name">cortronics<span class="brand-slash">.io</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#shopping-list">Shopping list</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="blog.html" class="current" aria-current="page">Blog</a>
+        <a href="index.html#notes">Notes</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" title="Change theme">
+        <span class="theme-icon" aria-hidden="true">☾</span>
+        <span class="theme-name" id="theme-name">Dark</span>
+      </button>
+      <a class="header-cta" href="index.html#projects">Project index <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="blog-hero wrap">
+      <div class="eyebrow"><span class="pulse" aria-hidden="true"></span> Field notes · Technical blog</div>
+      <h1>Notes from <em>the bench.</em></h1>
+      <p class="hero-lede">
+        Short, practical write-ups on power electronics, isolation, RF and embedded systems —
+        the things that are easy to get wrong and expensive to learn the hard way.
+      </p>
+      <div class="blog-hero-meta" id="blog-hero-meta"></div>
+    </section>
+
+    <section id="blog" class="section wrap">
+      <div id="blog-list-view">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">01 / Articles</div>
+            <h2>All articles</h2>
+            <p class="section-sub">Filter by topic, then open a post to read it in full.</p>
+          </div>
+          <a class="text-link" href="index.html#projects">Browse projects <span aria-hidden="true">↗</span></a>
+        </div>
+        <div id="topic-filters" class="topic-filters" role="group" aria-label="Filter articles by topic"></div>
+        <div class="results-bar"><span id="blog-results-count" aria-live="polite">—</span></div>
+        <div id="post-grid" class="post-grid"></div>
+      </div>
+
+      <article id="article-view" class="article-view" hidden>
+        <button id="back-to-blog" class="back-link" type="button">← All articles</button>
+        <div id="article-content"></div>
+        <div id="article-bottom" class="article-bottom"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a href="index.html" class="footer-brand">cortronics<span class="brand-slash">.io</span></a>
+      <span>Technical notes from the Cortronics electronics &amp; IoT workbench.</span>
+      <a href="index.html#projects">Back to projects ↑</a>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="postcard.js"></script>
+  <script src="theme.js"></script>
+  <script src="blog.js"></script>
+</body>
+</html>

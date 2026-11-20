@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cortronics — an index of electronics and IoT projects with component lists and estimated build costs." />
+  <title>Cortronics · Electronics &amp; IoT Project Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Cortronics home">
+        <span class="brand-mark" aria-hidden="true">C/<span class="brand-dot">•</span></span>
+        <span class="brand-name">cortronics<span class="brand-slash">.io</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#shopping-list">Shopping list</a>
+        <a href="#kit">Core kit</a>
+        <a href="#tools">Tools</a>
+        <a href="blog.html">Blog</a>
+        <a href="#notes">Notes</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" title="Change theme">
+        <span class="theme-icon" aria-hidden="true">☾</span>
+        <span class="theme-name" id="theme-name">Dark</span>
+      </button>
+      <a class="header-cta" href="#projects">Explore builds <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse" aria-hidden="true"></span> Electronics · IoT · Embedded Systems</div>
+        <h1>Build the <em>physical</em><br />world, one board<br />at a time.</h1>
+        <p class="hero-lede">
+          A working index of firmware, power electronics and full-stack embedded projects —
+          with the exact components you need and a realistic estimate of what each build costs.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">Browse all projects <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#shopping-list">View shopping list</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-hidden="true">
+        <div class="panel-head">
+          <span class="panel-dot"></span><span class="panel-dot"></span><span class="panel-dot"></span>
+          <span class="panel-title">catalogue.status</span>
+        </div>
+        <div class="panel-body">
+          <div class="panel-line"><span class="key">system</span><span class="val ok">online</span></div>
+          <div class="panel-line"><span class="key">blueprints</span><span class="val">03 loaded</span></div>
+          <div class="panel-line"><span class="key">projects</span><span class="val" id="hero-project-count">—</span></div>
+          <div class="panel-line"><span class="key">components</span><span class="val" id="hero-component-count">—</span></div>
+          <div class="panel-line"><span class="key">currency</span><span class="val">INR (₹)</span></div>
+          <div class="panel-chart">
+            <span style="--h: 28%"></span><span style="--h: 44%"></span><span style="--h: 36%"></span>
+            <span style="--h: 62%"></span><span style="--h: 51%"></span><span style="--h: 78%"></span>
+            <span style="--h: 66%"></span><span style="--h: 92%"></span><span style="--h: 74%"></span>
+            <span style="--h: 100%"></span><span style="--h: 84%"></span><span style="--h: 96%"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats wrap" aria-label="Catalogue summary">
+      <div class="stat">
+        <span class="stat-value" id="stat-projects">—</span>
+        <span class="stat-label">Projects indexed</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-components">—</span>
+        <span class="stat-label">Line items in BOMs</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-range">—</span>
+        <span class="stat-label">Cost range per build</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-blueprints">3</span>
+        <span class="stat-label">Source blueprints</span>
+      </div>
+    </section>
+
+    <section id="projects" class="section wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">01 / Catalogue</div>
+          <h2>Project index</h2>
+          <p class="section-sub">Filters, search and cost breakdowns for every build across the three blueprints.</p>
+        </div>
+        <a class="text-link" href="#notes">How prices work <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="catalogue-layout">
+        <aside id="sidebar" class="sidebar" aria-label="Project filters">
+          <div class="side-head">
+            <span class="side-title">Explore catalogue</span>
+            <button id="sidebar-close" class="side-close" type="button" aria-label="Close filters">×</button>
+          </div>
+
+          <div class="side-block">
+            <h3 class="side-label">Learning path</h3>
+            <div id="level-nav" class="side-list"></div>
+          </div>
+
+          <div class="side-block">
+            <h3 class="side-label">Skills involved</h3>
+            <div id="skill-nav" class="skill-nav"></div>
+          </div>
+
+          <div class="side-block">
+            <h3 class="side-label">Blueprint</h3>
+            <div id="volume-nav" class="side-list"></div>
+          </div>
+
+          <button id="reset-filters" class="side-reset" type="button">Reset all filters</button>
+        </aside>
+
+        <div class="catalogue-main">
+          <div class="toolbar">
+            <div class="search-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+              <input id="search" type="search" placeholder="Search projects or components…" autocomplete="off" aria-label="Search projects or components" />
+            </div>
+            <button id="filter-toggle" class="filter-toggle" type="button" aria-expanded="false"><span aria-hidden="true">☰</span> Filters</button>
+            <label class="select-wrap">
+              <span class="sr-only">Sort projects</span>
+              <select id="sort" aria-label="Sort projects">
+                <option value="volume">Sort: blueprint order</option>
+                <option value="path">Sort: learning path</option>
+                <option value="cost-asc">Cost: low to high</option>
+                <option value="cost-desc">Cost: high to low</option>
+                <option value="title">Name: A–Z</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="active-filters" class="active-filters"></div>
+
+          <div class="results-bar">
+            <span id="results-count" aria-live="polite">—</span>
+            <button id="expand-all" class="mini-btn" type="button">Expand all</button>
+          </div>
+
+          <div id="project-grid" class="project-grid"></div>
+          <div id="empty-state" class="empty-state" hidden>
+            <div class="empty-icon" aria-hidden="true">⌁</div>
+            <h3>Nothing on this bench</h3>
+            <p>No projects match those filters. Try a different search or reset them all.</p>
+            <button class="btn btn-ghost js-reset" type="button">Reset filters</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shopping-list" class="section wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">02 / Procurement</div>
+          <h2>Vol. 2 shopping list</h2>
+          <p class="section-sub">The consolidated incremental shopping list from the field-project blueprint — quoted directly, in INR.</p>
+        </div>
+        <a class="text-link" href="docs/ESP32_Applied_Projects_Vol2_Blueprint-v2.pdf" target="_blank" rel="noopener">Open source PDF <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="table-shell">
+        <table class="bom-table">
+          <thead>
+            <tr><th>Component</th><th>Qty</th><th>Est. INR</th><th>Target project</th></tr>
+          </thead>
+          <tbody id="shopping-list-body"></tbody>
+          <tfoot id="shopping-list-foot"></tfoot>
+        </table>
+      </div>
+      <p class="fine-print">
+        Qty <strong>1–2</strong> means a second ESP32-CAM is optional (one per CCTV node and one for the rover).
+        Shared items appear once in this list but are reused across the projects noted in the last column.
+      </p>
+    </section>
+
+    <section id="kit" class="section wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">03 / Foundations</div>
+          <h2>Core lab kit</h2>
+          <p class="section-sub">The master hardware list from Vol. 1. Most projects pull from this shared bench stock.</p>
+        </div>
+        <a class="text-link" href="docs/ESP32_IoT_Lab_and_Projects_Blueprint-v2.pdf" target="_blank" rel="noopener">Open source PDF <span aria-hidden="true">↗</span></a>
+      </div>
+      <div id="kit-grid" class="kit-grid"></div>
+    </section>
+
+    <section id="tools" class="section wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">03b / Bench setup</div>
+          <h2>Prerequisite tools</h2>
+          <p class="section-sub">What you need on the bench before starting — instruments, hand tools, safety gear and the software toolchain.</p>
+        </div>
+        <a class="text-link" href="#notes">Price notes <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="tool-callout">
+        <span class="callout-tag">MINIMUM VIABLE BENCH</span>
+        <p>A multimeter, temperature-controlled iron, consumables and hand tools come to roughly <strong>₹2,500 – ₹5,000</strong>. Add an oscilloscope before starting any of the measurement-heavy or 220V AC builds.</p>
+      </div>
+      <div id="tools-grid" class="tools-grid"></div>
+    </section>
+
+    <section id="blog-teaser" class="section wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">04 / Field notes</div>
+          <h2>From the blog</h2>
+          <p class="section-sub">Short technical write-ups on power, isolation, RF and the mistakes worth avoiding.</p>
+        </div>
+        <a class="text-link" href="blog.html">Visit the blog <span aria-hidden="true">↗</span></a>
+      </div>
+      <div id="blog-teaser-grid" class="post-grid"></div>
+    </section>
+
+    <section id="notes" class="section wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">05 / Fine print</div>
+          <h2>How to read this site</h2>
+        </div>
+      </div>
+      <div class="notes-grid">
+        <article class="note-card">
+          <div class="note-num">01</div>
+          <h3>Prices &amp; currency</h3>
+          <p>All figures are approximate Indian rupees (₹). Only the Vol. 2 shopping list has prices quoted in the source documents; those are marked <span class="basis-pill listed">listed</span>. Everything else is an indicative retail estimate based on common Indian component pricing.</p>
+        </article>
+        <article class="note-card">
+          <div class="note-num">02</div>
+          <h3>Shared components</h3>
+          <p>The core lab kit is reused across projects, so a project's estimate is the cost of the parts <em>on that bench</em>, not the cost of buying a whole new lab. Where a component is shared, its price appears in more than one project.</p>
+        </article>
+        <article class="note-card">
+          <div class="note-num">03</div>
+          <h3>Flagship variance</h3>
+          <p>Vol. 3 builds use custom 4-layer PCBs and single-board computers, so their totals swing widely with sourcing choices. The PCB line assumes ~₹1,500–₹3,000 for five fabricated boards. Treat these as order-of-magnitude budgets.</p>
+        </article>
+        <article class="note-card warn">
+          <div class="note-num">!</div>
+          <h3>Mains safety</h3>
+          <p>Projects touching 220V AC (Vol. 2 #3, Vol. 3 #2) require ≥6 mm creepage, a fuse + MOV on the AC line, an isolated supply such as the HLK-PM01, and a flame-retardant enclosure. Work de-energised and verify with a multimeter before touching anything.</p>
+        </article>
+      </div>
+      <div class="source-bar">
+        <span class="source-label">Source blueprints</span>
+        <div class="source-links" id="source-links"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span class="footer-brand">cortronics<span class="brand-slash">.io</span></span>
+      <span>Built from three hardware blueprints. Estimates are indicative — always check current component pricing.</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="diagram-data.js"></script>
+  <script src="diagrams.js"></script>
+  <script src="postcard.js"></script>
+  <script src="theme.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
