@@ -598,6 +598,7 @@ button { cursor: pointer; }
 
 .card {
   position: relative;
+  scroll-margin-top: 90px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--panel);

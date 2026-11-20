@@ -12,7 +12,7 @@ window.CortronicsBlog = (function () {
   }
 
   function card(post, base) {
-    const href = (base || "blog.html#") + "post-" + post.id;
+    const href = (base || "blog.html?post=") + post.id;
     return `<a class="post-card" href="${esc(href)}">
       <div class="post-card-top">
         <span class="post-cat">${esc(post.category)}</span>

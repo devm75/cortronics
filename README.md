@@ -18,6 +18,11 @@ component lists (BOMs) and estimated costs in INR.
 | `diagrams.js` | Dependency-free SVG schematic & board renderer |
 | `theme.js` | Dark / Light / Blueprint theme switcher |
 | `footer.js` | Shared contact line, copyright and "made with love" note |
+| `seo.js` | Meta tags, canonical URLs and JSON-LD structured data |
+| `og-image.svg`, `og-image.png` | Social preview image (1200×630) |
+| `favicon.svg` | Site icon |
+| `robots.txt`, `sitemap.xml` | Crawler directives and URL list |
+| `vercel.json` | Vercel rewrites and cache headers |
 | `docs/*.pdf` | The three source blueprints |
 
 ## Running it
@@ -52,6 +57,17 @@ The schematics are functional block diagrams and the board views are conceptual 
 sketches generated from `diagram-data.js`. They are meant for understanding and planning each
 build — they are **not** fabrication-ready KiCad schematics or Gerbers. The source blueprints
 in `docs/` remain the authoritative engineering references.
+
+## SEO & deployment
+
+Set `site.url` in `data.js` to your real domain before deploying — it drives canonical URLs,
+Open Graph tags and the JSON-LD structured data. If it differs from `https://cortronics.com`,
+also update the absolute URLs in `robots.txt`, `sitemap.xml` and the static `<head>` tags in
+both HTML files.
+
+`vercel.json` maps `/blog/<post-id>` to `blog.html?post=<post-id>`, so each article has a clean,
+crawlable URL with its own title, description and `BlogPosting` structured data. No build
+command is required on Vercel — Framework Preset "Other", output directory `.`.
 
 ## Price notes
 

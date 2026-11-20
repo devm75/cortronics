@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080b10"/>
+      <stop offset="1" stop-color="#101d26"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1c2a38" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.55"/>
+  <circle cx="1030" cy="120" r="220" fill="#2dd4bf" opacity="0.05"/>
+
+  <!-- circuit trace motif -->
+  <g fill="none" stroke="#2dd4bf" stroke-width="2" opacity="0.45">
+    <path d="M860 470 H960 V410 H1060"/>
+    <path d="M900 520 H1010 V450 H1120"/>
+    <path d="M940 570 H1040 V500 H1150"/>
+  </g>
+  <g fill="#2dd4bf" opacity="0.7">
+    <circle cx="960" cy="410" r="5"/><circle cx="1060" cy="410" r="5"/>
+    <circle cx="1010" cy="450" r="5"/><circle cx="1120" cy="450" r="5"/>
+    <circle cx="1040" cy="500" r="5"/>
+  </g>
+
+  <!-- brand mark -->
+  <rect x="80" y="92" width="62" height="62" rx="14" fill="#0c2b2a" stroke="#2dd4bf" stroke-width="2"/>
+  <text x="111" y="133" fill="#2dd4bf" font-family="monospace" font-size="24" font-weight="700" text-anchor="middle">C/</text>
+
+  <text x="80" y="300" fill="#e7eef5" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="700" letter-spacing="-3">cortronics</text>
+  <rect x="84" y="330" width="120" height="5" rx="2.5" fill="url(#accent)"/>
+  <text x="80" y="392" fill="#93a4b8" font-family="Arial, Helvetica, sans-serif" font-size="32">Where blueprints become hardware.</text>
+  <text x="80" y="470" fill="#2dd4bf" font-family="monospace" font-size="18" letter-spacing="1.5">19 PROJECTS  ·  3 BLUEPRINTS  ·  BOMS + COSTS + DIAGRAMS</text>
+  <text x="80" y="560" fill="#65768b" font-family="monospace" font-size="15">Punjab, India  ·  cortronics.com</text>
+</svg>

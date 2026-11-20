@@ -29,9 +29,13 @@ window.CORTRONICS = {
 
   /* Site-wide contact details (edit the email here to update both pages) */
   site: {
+    name: "cortronics",
+    url: "https://cortronics.com",
     email: "support@cortronics.com",
     location: "Punjab, India",
     tagline: "Where blueprints become hardware.",
+    description: "A free index of electronics and IoT projects with component lists, build cost estimates in INR, block schematics, board sketches and practical field notes.",
+    author: "Cortronics",
   },
 
   /* Learning-path tiers used by the sidebar */

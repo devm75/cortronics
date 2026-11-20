@@ -265,7 +265,7 @@
     const isOpen = state.expanded.has(p.id);
     const total = projectTotal(p);
     return `
-      <article class="card${isOpen ? " expanded" : ""}" data-id="${esc(p.id)}" data-volume="${esc(p.volume)}">
+      <article id="${esc(p.id)}" class="card${isOpen ? " expanded" : ""}" data-id="${esc(p.id)}" data-volume="${esc(p.volume)}">
         <div class="card-main">
           <div class="card-top">
             <span class="vol-badge">${esc(vol.short)}</span>
@@ -413,7 +413,7 @@
   function renderBlogTeaser() {
     $("#blog-teaser-grid").innerHTML = DATA.blogPosts
       .slice(0, 3)
-      .map((post) => window.CortronicsBlog.card(post, "blog.html#"))
+      .map((post) => window.CortronicsBlog.card(post, "blog.html?post="))
       .join("");
   }
 

@@ -45,28 +45,30 @@
 
   function renderList() {
     const list = state.topic === "all" ? posts : posts.filter((p) => p.category === state.topic);
-    $("#post-grid").innerHTML = list.map((p) => B.card(p, "#")).join("");
+    $("#post-grid").innerHTML = list.map((p) => B.card(p, "blog.html?post=")).join("");
     $("#blog-results-count").textContent =
       `${list.length} of ${posts.length} articles` +
       (state.topic === "all" ? "" : ` · ${state.topic}`);
   }
 
   function syncView() {
-    const match = /^#post-(.+)$/.exec(location.hash);
-    const post = match ? posts.find((p) => p.id === match[1]) : null;
+    const params = new URLSearchParams(location.search);
+    const hashMatch = /^#post-(.+)$/.exec(location.hash);
+    const id = params.get("post") || (hashMatch ? hashMatch[1] : null);
+    const post = id ? posts.find((p) => p.id === id) : null;
     if (post) {
       $("#blog-list-view").hidden = true;
       $("#article-view").hidden = false;
       $("#article-content").innerHTML = articleHtml(post);
       $("#article-bottom").innerHTML = nextPostHtml(post);
-      document.title = post.title + " · Cortronics Blog";
+      if (window.CortronicsSEO) window.CortronicsSEO.article(post);
       window.scrollTo({ top: 0, behavior: "auto" });
     } else {
       $("#blog-list-view").hidden = false;
       $("#article-view").hidden = true;
       $("#article-content").innerHTML = "";
       $("#article-bottom").innerHTML = "";
-      document.title = "Field Notes · Cortronics Blog";
+      if (window.CortronicsSEO) window.CortronicsSEO.page("blog");
     }
   }
 
@@ -108,7 +110,7 @@
     const next = posts[(i + 1) % posts.length];
     return `
       <div class="next-post-label">Up next</div>
-      ${B.card(next, "#")}`;
+      ${B.card(next, "blog.html?post=")}`;
   }
 
   setup();
