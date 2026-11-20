@@ -17,6 +17,7 @@ component lists (BOMs) and estimated costs in INR.
 | `diagram-data.js` | Per-project functional blocks, nets, zones and design notes |
 | `diagrams.js` | Dependency-free SVG schematic & board renderer |
 | `theme.js` | Dark / Light / Blueprint theme switcher |
+| `footer.js` | Shared contact line, copyright and "made with love" note |
 | `docs/*.pdf` | The three source blueprints |
 
 ## Running it
@@ -40,7 +41,10 @@ python3 -m http.server 8000
 - Vol. 2 consolidated shopping list and Vol. 1 core lab kit reference
 - Prerequisite tools section: bench instruments, hand tools, safety gear and software
 - Per-project block schematics and 2D board placement sketches rendered as SVG, with download button
-- Three themes (Dark, Light, Blueprint) with local storage persistence; Inter / Space Grotesk / JetBrains Mono typography
+- Three themes (Dark, Light, Blueprint) with local storage persistence; DM Sans / IBM Plex Mono typography
+- Product name "cortronics" with the tagline "Where blueprints become hardware." (edit `site.tagline` in `data.js`)
+
+Edit `site.email` in `data.js` to change the contact address shown in both footers.
 
 ## Diagram notes
 

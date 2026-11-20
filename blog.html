@@ -7,7 +7,7 @@
   <title>Field Notes · Cortronics Blog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -17,7 +17,10 @@
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="Cortronics home">
         <span class="brand-mark" aria-hidden="true">C/<span class="brand-dot">•</span></span>
-        <span class="brand-name">cortronics<span class="brand-slash">.io</span></span>
+        <span class="brand-text">
+          <span class="brand-name">cortronics</span>
+          <span class="brand-tagline" data-tagline></span>
+        </span>
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="index.html#projects">Projects</a>
@@ -70,15 +73,17 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <a href="index.html" class="footer-brand">cortronics<span class="brand-slash">.io</span></a>
+      <a href="index.html" class="footer-brand">cortronics<span class="footer-tagline" data-tagline></span></a>
       <span>Technical notes from the Cortronics electronics &amp; IoT workbench.</span>
       <a href="index.html#projects">Back to projects ↑</a>
     </div>
+    <div class="wrap footer-bottom" data-footer-extra></div>
   </footer>
 
   <script src="data.js"></script>
   <script src="postcard.js"></script>
   <script src="theme.js"></script>
+  <script src="footer.js"></script>
   <script src="blog.js"></script>
 </body>
 </html>

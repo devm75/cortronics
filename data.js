@@ -27,6 +27,13 @@ window.CORTRONICS = {
     },
   },
 
+  /* Site-wide contact details (edit the email here to update both pages) */
+  site: {
+    email: "support@cortronics.com",
+    location: "Punjab, India",
+    tagline: "Where blueprints become hardware.",
+  },
+
   /* Learning-path tiers used by the sidebar */
   levels: [
     { id: "easy", label: "Easy", note: "First builds · fundamentals" },
